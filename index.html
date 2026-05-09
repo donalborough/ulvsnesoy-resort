@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulvsnesøy — Privat Øyresort i Norge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-mark">&#10022;</span>
+        <span class="loader-name">Ulvsnesøy</span>
+      </div>
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+      <p class="loader-sub">Vestlandet · Norge</p>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scrollProgress"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-mark">&#10022;</span>
+        <span class="logo-text">Ulvsnesøy</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#om-oss" data-i18n="nav_about">Om Øyen</a></li>
+        <li><a href="#villas" data-i18n="nav_villas">Villas</a></li>
+        <li><a href="#fiske" data-i18n="nav_fish">Fiske</a></li>
+        <li><a href="#galleri" data-i18n="nav_gallery">Galleri</a></li>
+        <li><a href="#booking" class="nav-cta magnetic-btn"><span data-i18n="nav_book">Book Nå</span></a></li>
+      </ul>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language" title="Switch language">
+        <span class="lt-no active">NO</span><span class="lt-sep">|</span><span class="lt-en">EN</span>
+      </button>
+      <button class="hamburger" aria-label="Meny" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#om-oss" class="mobile-link">Om Øyen</a></li>
+      <li><a href="#villas" class="mobile-link">Villas</a></li>
+      <li><a href="#fiske" class="mobile-link">Fiske</a></li>
+      <li><a href="#galleri" class="mobile-link">Galleri</a></li>
+      <li><a href="#booking" class="mobile-link">Book Nå</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-parallax-wrap">
+      <img src="images/hero_island.jpg" alt="Ulvsnesøy island reflected in the fjord" class="hero-parallax-img" id="heroImg" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow split-fade" data-delay="0" data-i18n="hero_eyebrow">Vestlandet · Norge</p>
+      <h1 class="hero-title">
+        <span class="split-line" data-delay="200" data-i18n="hero_h1_1">Din private øy</span>
+        <em class="split-line" data-delay="400" data-i18n="hero_h1_2">midt i fjorden</em>
+      </h1>
+      <p class="hero-subtitle split-fade" data-delay="700" data-i18n="hero_subtitle">
+        Eksklusivt fiskeresort med private villas — kun naturen, fjorden og stillheten.
+      </p>
+      <div class="hero-actions split-fade" data-delay="900">
+        <a href="#villas" class="btn btn-primary magnetic-btn"><span data-i18n="hero_btn_villas">Se Villas</span></a>
+        <a href="#fiske" class="btn btn-ghost magnetic-btn"><span data-i18n="hero_btn_fish">Fiskemuligheter</span></a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span data-i18n="hero_scroll">Rull ned</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Private Villas</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">60+</span>
+        <span class="stat-label" data-i18n="stat_fish">Fiskearter</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label" data-i18n="stat_island">Privat Øy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Torsk · Laks · Kveite · Sei · Fjordfiske · Havfiske · Midnattssol · Stillhet · Natur · Ro · Eksklusivt · Privat · 5 Villas ·&nbsp;</span>
+      <span>Torsk · Laks · Kveite · Sei · Fjordfiske · Havfiske · Midnattssol · Stillhet · Natur · Ro · Eksklusivt · Privat · 5 Villas ·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- OM OSS -->
+  <section class="om-oss section" id="om-oss">
+    <div class="container">
+      <div class="om-oss-grid">
+        <div class="om-oss-visual">
+          <div class="island-card clip-reveal">
+            <div class="parallax-wrap" style="aspect-ratio:4/3;">
+              <img src="images/omoss_island.jpg" alt="Ulvsnesøy island with mountain reflection" class="parallax-img" />
+            </div>
+            <div class="island-badge">Ulvsnesøy</div>
+          </div>
+          <div class="floating-card reveal-up delay-2">
+            <div class="fc-icon">🎣</div>
+            <div>
+              <strong data-i18n="fish_eyebrow_fc">Fiskesesong</strong>
+              <span>April — Oktober</span>
+            </div>
+          </div>
+        </div>
+        <div class="om-oss-text">
+          <p class="section-eyebrow reveal-up" data-i18n="about_eyebrow">Om Øyen</p>
+          <h2 class="section-title reveal-up delay-1" data-i18n-html="about_h2">En hel øy —<br /><em>kun for deg</em></h2>
+          <p class="body-text reveal-up delay-2" data-i18n="about_p1">Ulvsnesøy er en privat øy på Vestlandet, omgitt av ren norsk natur og rike fiskefjorder. Her leier du ikke bare et rom — du leier en hel opplevelse.</p>
+          <p class="body-text reveal-up delay-3" data-i18n="about_p2">Med fem eksklusive villas, eget båthus og privat brygge er dette stedet skapt for dem som søker ekte ro, uberørt natur og minneverdige fisketurer.</p>
+          <ul class="features-list reveal-up delay-4">
+            <li><span class="feat-icon">✦</span> <span data-i18n="about_feat1">Privat brygge og båthus</span></li>
+            <li><span class="feat-icon">✦</span> <span data-i18n="about_feat2">Utlån av fiskeutstyr og båter</span></li>
+            <li><span class="feat-icon">✦</span> <span data-i18n="about_feat3">Lokal fiskeekspert tilgjengelig</span></li>
+            <li><span class="feat-icon">✦</span> <span data-i18n="about_feat4">Matlaging av din fangst på forespørsel</span></li>
+          </ul>
+          <a href="#booking" class="btn btn-primary magnetic-btn reveal-up delay-5"><span data-i18n="about_cta">Forespør Opphold</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX DIVIDER 1 — overview -->
+  <div class="parallax-divider">
+    <div class="parallax-wrap parallax-wrap--full">
+      <img src="images/divider_overview.jpg" alt="Ulvsnesøy resort panorama" class="parallax-img" />
+    </div>
+    <div class="parallax-divider-overlay">
+      <div class="parallax-divider-text reveal-up">
+        <span data-i18n="pdiv1_sub">5 eksklusive villas</span>
+        <h2 data-i18n="pdiv1_h2">En hel øy til din disposisjon</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- VILLAS — HORIZONTAL SCROLL -->
+  <section class="villas section" id="villas">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up" data-i18n="villas_eyebrow">Overnatting</p>
+        <h2 class="section-title reveal-up delay-1" data-i18n="villas_title">Våre villas</h2>
+        <p class="section-desc reveal-up delay-2" data-i18n="villas_desc">Fem unike villas — alle med panoramautsikt, privat terrasse og moderne fasiliteter.</p>
+      </div>
+    </div>
+    <div class="villas-carousel-outer">
+    <button class="villas-nav-btn villas-arrow-prev" id="villasPrev" aria-label="Previous villa">&#8592;</button>
+    <div class="villas-scroll-wrap">
+      <div class="villas-track" id="villasTrack">
+
+        <div class="villa-card" data-villa="white">
+          <div class="villa-img">
+            <div class="parallax-wrap" style="height:100%;">
+              <img src="images/ext_whitehouse.jpg" alt="Hvitvillaen" class="parallax-img" />
+            </div>
+            <div class="villa-tag" data-i18n="badge_popular">Mest populær</div>
+          </div>
+          <div class="villa-body">
+            <div class="villa-header">
+              <h3 data-i18n="v_white_name">Hvitvillaen</h3>
+              <span class="villa-price">fra 3 800 kr <small>/natt</small></span>
+            </div>
+            <p data-i18n="v_white_short">Den klassiske hovedvillaen med direkte fjordutsikt fra soverommet. Historisk sjarm møter moderne komfort.</p>
+            <div class="villa-amenities">
+              <span>👥 <span data-i18n="guests_6">6 gjester</span></span><span>🛏 <span data-i18n="beds_3">3 soverom</span></span><span>🛁 2 bad</span><span>🌊 <span data-i18n="feat_fjord">Fjordutsikt</span></span>
+            </div>
+            <button class="btn btn-outline magnetic-btn villa-detail-btn" data-villa="white"><span data-i18n="villa_details">Se detaljer</span></button>
+          </div>
+        </div>
+
+        <div class="villa-card" data-villa="gray">
+          <div class="villa-img">
+            <div class="parallax-wrap" style="height:100%;">
+              <img src="images/villa_gray_living.jpg" alt="Gråvillaen" class="parallax-img" />
+            </div>
+          </div>
+          <div class="villa-body">
+            <div class="villa-header">
+              <h3 data-i18n="v_gray_name">Gråvillaen</h3>
+              <span class="villa-price">fra 2 900 kr <small>/natt</small></span>
+            </div>
+            <p data-i18n="v_gray_short">Moderne og koselig med vedovn, panoramavinduer og stor terrasse mot naturen.</p>
+            <div class="villa-amenities">
+              <span>👥 <span data-i18n="guests_4">4 gjester</span></span><span>🛏 <span data-i18n="beds_2">2 soverom</span></span><span>🛁 1 bad</span><span>🪵 <span data-i18n="feat_fireplace">Vedovn</span></span>
+            </div>
+            <button class="btn btn-outline magnetic-btn villa-detail-btn" data-villa="gray"><span data-i18n="villa_details">Se detaljer</span></button>
+          </div>
+        </div>
+
+        <div class="villa-card" data-villa="red">
+          <div class="villa-img">
+            <div class="parallax-wrap" style="height:100%;">
+              <img src="images/divider_overview.jpg" alt="Rødvillaen" class="parallax-img" style="object-position: center 30%;" />
+            </div>
+          </div>
+          <div class="villa-body">
+            <div class="villa-header">
+              <h3 data-i18n="v_red_name">Rødvillaen</h3>
+              <span class="villa-price">fra 3 200 kr <small>/natt</small></span>
+            </div>
+            <p data-i18n="v_red_short">Rustikk sjarm med eksponerte trebjelker og varmt, innbydende interiør.</p>
+            <div class="villa-amenities">
+              <span>👥 <span data-i18n="guests_4">4 gjester</span></span><span>🛏 <span data-i18n="beds_2">2 soverom</span></span><span>🛁 1 bad</span><span>🌲 <span data-i18n="feat_nature">Naturutsikt</span></span>
+            </div>
+            <button class="btn btn-outline magnetic-btn villa-detail-btn" data-villa="red"><span data-i18n="villa_details">Se detaljer</span></button>
+          </div>
+        </div>
+
+        <div class="villa-card" data-villa="yellow">
+          <div class="villa-img">
+            <div class="parallax-wrap" style="height:100%;">
+              <img src="images/villa_yellow.jpg" alt="Gultvillaen" class="parallax-img" />
+            </div>
+          </div>
+          <div class="villa-body">
+            <div class="villa-header">
+              <h3 data-i18n="v_yellow_name">Gultvillaen</h3>
+              <span class="villa-price">fra 2 600 kr <small>/natt</small></span>
+            </div>
+            <p data-i18n="v_yellow_short">Sjarmerende og privat — nestled i naturen med utsikt mot fjord og fjell.</p>
+            <div class="villa-amenities">
+              <span>👥 <span data-i18n="guests_2">2 gjester</span></span><span>🛏 <span data-i18n="beds_1">1 soverom</span></span><span>🛁 1 bad</span><span>🏔️ <span data-i18n="feat_mountain">Fjellutsikt</span></span>
+            </div>
+            <button class="btn btn-outline magnetic-btn villa-detail-btn" data-villa="yellow"><span data-i18n="villa_details">Se detaljer</span></button>
+          </div>
+        </div>
+
+        <div class="villa-card" data-villa="green">
+          <div class="villa-img">
+            <div class="parallax-wrap" style="height:100%;">
+              <img src="images/villa_green_ext.jpg" alt="Grønnvillaen" class="parallax-img" />
+            </div>
+            <div class="villa-tag villa-tag--new" data-i18n="badge_new">Ny!</div>
+          </div>
+          <div class="villa-body">
+            <div class="villa-header">
+              <h3 data-i18n="v_green_name">Grønnvillaen</h3>
+              <span class="villa-price">fra 2 800 kr <small>/natt</small></span>
+            </div>
+            <p data-i18n="v_green_short">Moderne hytte med stor terrasse og åpen stue. Rett ved naturen med utsikt over øyen.</p>
+            <div class="villa-amenities">
+              <span>👥 <span data-i18n="guests_4">4 gjester</span></span><span>🛏 <span data-i18n="beds_2">2 soverom</span></span><span>🛁 1 bad</span><span>🏡 <span data-i18n="feat_terrace">Terrasse</span></span>
+            </div>
+            <button class="btn btn-outline magnetic-btn villa-detail-btn" data-villa="green"><span data-i18n="villa_details">Se detaljer</span></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <button class="villas-nav-btn villas-arrow-next" id="villasNext" aria-label="Next villa">&#8594;</button>
+    </div>
+    <div class="villas-nav">
+      <span class="villas-nav-dots" id="villasDots"></span>
+    </div>
+  </section>
+
+  <!-- FISKE -->
+  <section class="fiske section" id="fiske">
+    <div class="fiske-bg"></div>
+    <div class="container">
+      <div class="section-header light">
+        <p class="section-eyebrow reveal-up" data-i18n="fish_eyebrow">Aktiviteter</p>
+        <h2 class="section-title reveal-up delay-1" data-i18n="fish_title">Fiskeopplevelsen</h2>
+        <p class="section-desc reveal-up delay-2" data-i18n="fish_desc">Vestlandet er blant Europas beste fiskesteder. Fra øyen vår har du tilgang til rike fjorder og åpent hav.</p>
+      </div>
+      <div class="fiske-grid">
+        <div class="fiske-card reveal-up delay-1"><div class="fiske-icon">🐟</div><h3 data-i18n="fish_1_h">Fjordfiske</h3><p data-i18n="fish_1_p">Torsk, sei og lyr holder til i de rike fjordene rett utenfor øyen.</p></div>
+        <div class="fiske-card reveal-up delay-2"><div class="fiske-icon">🐋</div><h3 data-i18n="fish_2_h">Havfiske</h3><p data-i18n="fish_2_p">Med båt ut til åpent hav kan du jakte kveite, laks og tunfisk.</p></div>
+        <div class="fiske-card reveal-up delay-3"><div class="fiske-icon">🎣</div><h3 data-i18n="fish_3_h">Flugefiske</h3><p data-i18n="fish_3_p">Elver og bekker på fastlandet inkludert. Lokal guide tilgjengelig.</p></div>
+        <div class="fiske-card reveal-up delay-4"><div class="fiske-icon">🌅</div><h3 data-i18n="fish_4_h">Midnattssol</h3><p data-i18n="fish_4_p">Sommerfiske under midnattsolen — fisk 24 timer i døgnet i juli.</p></div>
+      </div>
+      <div class="fiske-species reveal-up delay-3">
+        <p class="species-title" data-i18n="fish_species">Vanlige fiskearter:</p>
+        <div class="species-tags">
+          <span>Torsk</span><span>Laks</span><span>Kveite</span><span>Sei</span>
+          <span>Lyr</span><span>Ørret</span><span>Makrell</span><span>Steinbit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES — GAMES ROOM & ACTIVITIES -->
+  <section class="amenities section">
+    <div class="container">
+      <div class="amenities-grid">
+        <div class="amenities-visual clip-reveal">
+          <div class="parallax-wrap" style="aspect-ratio:16/10;">
+            <img src="images/playhouse_games.jpg" alt="Spillrom med biljard og bordtennis" class="parallax-img" />
+          </div>
+        </div>
+        <div class="amenities-text">
+          <p class="section-eyebrow reveal-up" data-i18n="am_eyebrow">Fasiliteter</p>
+          <h2 class="section-title reveal-up delay-1" data-i18n-html="am_title">Alt du trenger —<br /><em>på øyen</em></h2>
+          <p class="body-text reveal-up delay-2" data-i18n="am_p">Ulvsnesøy er mer enn overnattingssted. Her har vi skapt en komplett opplevelse for hele familien eller vennegjenger.</p>
+          <div class="amenities-items reveal-up delay-3">
+            <div class="am-item"><span class="am-icon">🏓</span><div><strong data-i18n="am_1_h">Spillhus</strong><span data-i18n="am_1_p">Biljard, bordtennis, dart og mer</span></div></div>
+            <div class="am-item"><span class="am-icon">⛵</span><div><strong data-i18n="am_2_h">Båtutleie</strong><span data-i18n="am_2_p">Motoriserte båter og kajakker</span></div></div>
+            <div class="am-item"><span class="am-icon">🚲</span><div><strong data-i18n="am_3_h">Sykler</strong><span data-i18n="am_3_p">Utforsk øyen og omgivelsene</span></div></div>
+            <div class="am-item"><span class="am-icon">🍳</span><div><strong data-i18n="am_4_h">Kokketjeneste</strong><span data-i18n="am_4_p">La oss tilberede din fangst</span></div></div>
+            <div class="am-item"><span class="am-icon">🔥</span><div><strong data-i18n="am_5_h">Utendørs bål</strong><span data-i18n="am_5_p">Grillplass og bålplass ved vannet</span></div></div>
+            <div class="am-item"><span class="am-icon">🌿</span><div><strong data-i18n="am_6_h">Naturstier</strong><span data-i18n="am_6_p">Merkede turer på og rundt øyen</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX DIVIDER 2 — dramatic sunset -->
+  <div class="parallax-divider parallax-divider--tall">
+    <div class="parallax-wrap parallax-wrap--full">
+      <img src="images/ext_fjord3.jpg" alt="Dramatic sunset over Norwegian fjord" class="parallax-img" style="object-position: center 30%;" />
+    </div>
+    <div class="parallax-divider-overlay parallax-divider-overlay--dark">
+      <div class="parallax-divider-text reveal-up">
+        <blockquote>"Den beste fisketuren vi har hatt — og naturen er bare magisk."</blockquote>
+        <cite>— Lars og Maria, Oslo ★★★★★</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <section class="why section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <p class="section-eyebrow reveal-up" data-i18n="why_eyebrow">Hvorfor Ulvsnesøy?</p>
+          <h2 class="section-title reveal-up delay-1" data-i18n-html="why_title">Mer enn<br /><em>bare et opphold</em></h2>
+          <div class="why-items">
+            <div class="why-item reveal-left delay-1"><span class="why-num">01</span><div><h4 data-i18n="why_1_h">Total privatliv</h4><p data-i18n="why_1_p">Hele øyen er din. Ingen andre gjester — bare naturen og dine nærmeste.</p></div></div>
+            <div class="why-item reveal-left delay-2"><span class="why-num">02</span><div><h4 data-i18n="why_2_h">Alt inkludert</h4><p data-i18n="why_2_p">Båter, fiskeutstyr, kajakker, sykler og spillhus — alt er klart for deg.</p></div></div>
+            <div class="why-item reveal-left delay-3"><span class="why-num">03</span><div><h4 data-i18n="why_3_h">Lokal kunnskap</h4><p data-i18n="why_3_p">Våre guider kjenner hvert fiskested og de beste plassene.</p></div></div>
+            <div class="why-item reveal-left delay-4"><span class="why-num">04</span><div><h4 data-i18n="why_4_h">Bærekraftig fiske</h4><p data-i18n="why_4_p">Vi praktiserer catch-and-release og ivaretar fjordens ressurser.</p></div></div>
+          </div>
+        </div>
+        <div class="why-visual reveal-right">
+          <div class="why-photo-wrap">
+            <div class="parallax-wrap" style="height:100%;">
+              <img src="images/ext_forest.jpg" alt="Solstråler gjennom skogen mot fjorden" class="parallax-img" style="object-position: center 30%;" />
+            </div>
+            <div class="why-photo-badge"><span class="season-dot"></span><span data-i18n="why_season">Åpen April — Oktober</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="galleri section" id="galleri">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up" data-i18n="gal_eyebrow">Galleri</p>
+        <h2 class="section-title reveal-up delay-1" data-i18n="gal_title">Stemningsbilder</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gi-large clip-reveal">
+          <div class="parallax-wrap gallery-parallax">
+            <img src="images/hero_island.jpg" alt="Ulvsnesøy speilbilde i fjorden" class="parallax-img" />
+          </div>
+          <div class="gallery-label" data-i18n="gal_1">Øyen i fjorden</div>
+        </div>
+        <div class="gallery-item clip-reveal" style="--clip-delay:0.15s">
+          <div class="parallax-wrap gallery-parallax">
+            <img src="images/divider_overview.jpg" alt="Alle villas fra fugleperspektiv" class="parallax-img" style="object-position: center 20%;" />
+          </div>
+          <div class="gallery-label" data-i18n="gal_2">Oversikt over øyen</div>
+        </div>
+        <div class="gallery-item gi-tall clip-reveal" style="--clip-delay:0.1s">
+          <div class="parallax-wrap gallery-parallax" style="height:100%;">
+            <img src="images/ext_fjord2.jpg" alt="Solstråler gjennom skogen" class="parallax-img" />
+          </div>
+          <div class="gallery-label" data-i18n="gal_3">Magisk morgenlys</div>
+        </div>
+        <div class="gallery-item clip-reveal" style="--clip-delay:0.25s">
+          <div class="parallax-wrap gallery-parallax">
+            <img src="images/villa_white_exterior.jpg" alt="Soverom med fjordutsikt" class="parallax-img" />
+          </div>
+          <div class="gallery-label" data-i18n="gal_4">Utsikt fra soverommet</div>
+        </div>
+        <div class="gallery-item clip-reveal" style="--clip-delay:0.3s">
+          <div class="parallax-wrap gallery-parallax">
+            <img src="images/villa_yellow.jpg" alt="Gultvillaen i solnedgang" class="parallax-img" style="object-position: center 40%;" />
+          </div>
+          <div class="gallery-label" data-i18n="gal_5">Gultvillaen</div>
+        </div>
+      </div>
+      <p class="gallery-note reveal-up delay-4" data-i18n="gal_note">Flere bilder — følg oss på Instagram</p>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking section" id="booking">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-info">
+          <p class="section-eyebrow reveal-up" data-i18n="book_eyebrow">Reservasjon</p>
+          <h2 class="section-title reveal-up delay-1" data-i18n="book_title">Book ditt opphold</h2>
+          <p class="body-text reveal-up delay-2" data-i18n="book_desc">Fyll ut skjemaet, så tar vi kontakt innen 24 timer med tilgjengelighet og skreddersydd tilbud.</p>
+          <div class="contact-info reveal-up delay-3">
+            <div class="contact-item"><span class="ci-icon">📍</span><div><strong data-i18n="book_addr">Adresse</strong><span>Ulvsnesøy, Vestlandet, Norge</span></div></div>
+            <div class="contact-item"><span class="ci-icon">📞</span><div><strong data-i18n="book_phone">Telefon</strong><span>+47 XXX XX XXX</span></div></div>
+            <div class="contact-item"><span class="ci-icon">✉️</span><div><strong data-i18n="book_email_lbl">E-post</strong><span>post@ulvsnesoy.no</span></div></div>
+          </div>
+        </div>
+        <div class="booking-form-wrap reveal-right">
+          <form class="booking-form" id="bookingForm">
+            <div class="form-row">
+              <div class="form-group"><label for="fname" data-i18n="form_fname">Fornavn</label><input type="text" id="fname" placeholder="Ola" data-i18n-ph="form_ph_fname" required /></div>
+              <div class="form-group"><label for="lname" data-i18n="form_lname">Etternavn</label><input type="text" id="lname" placeholder="Nordmann" data-i18n-ph="form_ph_lname" required /></div>
+            </div>
+            <div class="form-group"><label for="email" data-i18n="form_email">E-post</label><input type="email" id="email" placeholder="ola@nordmann.no" data-i18n-ph="form_ph_email" required /></div>
+            <div class="form-group">
+              <label for="villa" data-i18n="form_villa">Villa</label>
+              <select id="villa">
+                <option value="">Velg villa...</option>
+                <option value="hvit">Hvitvillaen (3 800 kr/natt)</option>
+                <option value="gra">Gråvillaen (2 900 kr/natt)</option>
+                <option value="rod">Rødvillaen (3 200 kr/natt)</option>
+                <option value="gul">Gultvillaen (2 600 kr/natt)</option>
+                <option value="gronn">Grønnvillaen (2 800 kr/natt)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="arrival" data-i18n="form_arrival">Ankomst</label><input type="date" id="arrival" /></div>
+              <div class="form-group"><label for="departure" data-i18n="form_departure">Avreise</label><input type="date" id="departure" /></div>
+            </div>
+            <div class="form-group">
+              <label for="guests" data-i18n="form_guests">Antall gjester</label>
+              <select id="guests">
+                <option value="2" selected>2 personer</option>
+                <option value="3">3 personer</option>
+                <option value="4">4 personer</option>
+                <option value="5">5 personer</option>
+                <option value="6">6 personer</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="message" data-i18n="form_msg">Melding (valgfritt)</label><textarea id="message" rows="3" placeholder="Spesielle ønsker, fiskepreferanser..." data-i18n-ph="form_ph_msg"></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full magnetic-btn"><span class="btn-text" data-i18n="form_submit">Send forespørsel</span><span class="btn-arrow">→</span></button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h3 data-i18n="form_success_h">Takk for din forespørsel!</h3>
+            <p data-i18n="form_success_p">Vi tar kontakt innen 24 timer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo"><span class="logo-mark">&#10022;</span><span class="logo-text">Ulvsnesøy</span></a>
+          <p data-i18n="footer_desc">Privat øyresort på Vestlandet — eksklusivt fiskeopphold i hjertet av norsk natur.</p>
+        </div>
+        <div class="footer-links"><h4 data-i18n="footer_links_h">Lenker</h4><ul>
+          <li><a href="#om-oss" data-i18n="nav_about">Om Øyen</a></li>
+          <li><a href="#villas" data-i18n="nav_villas">Villas</a></li>
+          <li><a href="#fiske" data-i18n="nav_fish">Fiske</a></li>
+          <li><a href="#booking" data-i18n="nav_book">Book Nå</a></li>
+        </ul></div>
+        <div class="footer-links"><h4 data-i18n="footer_info_h">Informasjon</h4><ul>
+          <li><a href="#" data-i18n="footer_terms">Betingelser</a></li>
+          <li><a href="#" data-i18n="footer_privacy">Personvern</a></li>
+          <li><a href="#" data-i18n="footer_cancel">Kanselleringspolicy</a></li>
+          <li><a href="#" data-i18n="footer_faq">FAQ</a></li>
+        </ul></div>
+        <div class="footer-social">
+          <h4 data-i18n="footer_social_h">Følg oss</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon">IG</a>
+            <a href="#" aria-label="Facebook" class="social-icon">FB</a>
+          </div>
+          <p class="footer-seasonal"><span class="season-dot"></span><span data-i18n="footer_season">Åpen April — Oktober</span></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2025 Ulvsnesøy Resort. Alle rettigheter forbeholdt.</p>
+        <p data-i18n="footer_made">Laget med ❤ i Norge</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AMBIENT MUSIC PLAYER -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-btn" id="musicToggle" aria-label="Toggle ambient music">
+      <span class="music-icon">♪</span>
+      <span class="music-wave" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+    </button>
+    <span class="music-label" id="musicLabel">Musikk</span>
+  </div>
+
+  <!-- VILLA DETAIL MODAL -->
+  <div id="villaModal" class="villa-modal" role="dialog" aria-modal="true" aria-labelledby="vmTitle">
+    <div class="vm-backdrop" id="vmBackdrop"></div>
+    <div class="vm-panel">
+      <button class="vm-close" id="vmClose" aria-label="Close">&#10005;</button>
+      <div class="vm-layout">
+
+        <!-- Gallery -->
+        <div class="vm-gallery">
+          <div class="vm-main-wrap">
+            <img class="vm-main-img" id="vmMainImg" src="" alt="" />
+            <button class="vm-nav vm-prev" id="vmPrev" aria-label="Previous image">&#8249;</button>
+            <button class="vm-nav vm-next" id="vmNext" aria-label="Next image">&#8250;</button>
+            <div class="vm-img-counter" id="vmCounter">1 / 1</div>
+          </div>
+          <div class="vm-thumbs" id="vmThumbs"></div>
+        </div>
+
+        <!-- Info -->
+        <div class="vm-info">
+          <div class="vm-top-row">
+            <span class="vm-badge" id="vmBadge"></span>
+            <span class="vm-price-tag" id="vmPriceTag"></span>
+          </div>
+          <h2 class="vm-title" id="vmTitle"></h2>
+          <p class="vm-desc" id="vmDesc"></p>
+
+          <div class="vm-specs" id="vmSpecs"></div>
+
+          <div class="vm-section-label" data-i18n="vm_facilities">Fasiliteter</div>
+          <div class="vm-features" id="vmFeatures"></div>
+
+          <div class="vm-actions">
+            <a href="#booking" class="btn btn-primary magnetic-btn vm-book-btn" id="vmBookBtn">
+              <span data-i18n="nav_book">Book Nå</span>
+            </a>
+            <a href="#booking" class="btn btn-outline vm-inquire-btn" id="vmInquireBtn">
+              <span data-i18n="about_cta">Forespør Opphold</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
