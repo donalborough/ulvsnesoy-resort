@@ -51,6 +51,7 @@ const I18N = {
     why_3_h:'Lokal kunnskap', why_3_p:'Våre guider kjenner hvert fiskested og de beste plassene.',
     why_4_h:'Bærekraftig fiske', why_4_p:'Vi praktiserer catch-and-release og ivaretar fjordens ressurser.',
     why_season:'Åpen April — Oktober',
+    /* video */ vid_eyebrow:'Se Øyen', vid_title:'Opplev Ulvsnesøy', vid_desc:'Se vår film og la deg friste av hva som venter deg på den private øyen vår midt i fjorden.',
     /* gallery */ gal_eyebrow:'Galleri', gal_title:'Stemningsbilder',
     gal_1:'Øyen i fjorden', gal_2:'Oversikt over øyen', gal_3:'Magisk morgenlys', gal_4:'Utsikt fra soverommet', gal_5:'Gultvillaen',
     gal_note:'Flere bilder — følg oss på Instagram',
@@ -117,6 +118,7 @@ const I18N = {
     why_3_h:'Local Knowledge', why_3_p:'Our guides know every fishing spot and the best locations.',
     why_4_h:'Sustainable Fishing', why_4_p:'We practice catch-and-release and preserve the fjord\'s resources.',
     why_season:'Open April — October',
+    /* video */ vid_eyebrow:'Discover', vid_title:'Experience Ulvsnesøy', vid_desc:'Watch our film and let yourself be inspired by what awaits you on our private island in the fjord.',
     /* gallery */ gal_eyebrow:'Gallery', gal_title:'Atmosphere',
     gal_1:'Island in the fjord', gal_2:'Island overview', gal_3:'Magical morning light', gal_4:'View from the bedroom', gal_5:'The Yellow Villa',
     gal_note:'More photos — follow us on Instagram',
@@ -188,7 +190,7 @@ function setLang(lang) {
 const VILLAS = {
   white: {
     price: '3 800 kr',
-    images: ['images/white_105.jpg','images/white_01.jpg','images/white_02.jpg','images/white_05.jpg','images/white_06.jpg','images/white_07.jpg','images/white_08.jpg','images/white_108.jpg','images/white_110.jpg'],
+    images: ['images/pro/pro_white_facade.jpg','images/pro/pro_white_2.jpg','images/pro/pro_white_3.jpg','images/pro/pro_white_4.jpg','images/pro/pro_white_5.jpg','images/pro/pro_white_6.jpg'],
     no: {
       name: 'Hvitvillaen', badge: 'Mest populær',
       desc: 'Den klassiske hovedvillaen på Ulvsnesøy. Tre soverom med direkte utsikt mot fjorden og fjellene. Fullverdig kjøkken, to bad og stor stue med vedovn. Historisk sjarm møter moderne komfort — den mest populære villaen på øyen.',
@@ -204,7 +206,7 @@ const VILLAS = {
   },
   gray: {
     price: '2 900 kr',
-    images: ['images/gray_44.jpg','images/gray_01.jpg','images/gray_03.jpg','images/gray_05.jpg','images/gray_07.jpg','images/gray_09.jpg','images/gray_11.jpg','images/gray_12.jpg','images/gray_45.jpg'],
+    images: ['images/pro/pro_gray_facade.jpg','images/pro/pro_gray_facade2.jpg','images/pro/pro_gray_1.jpg','images/pro/pro_gray_2.jpg','images/pro/pro_gray_3.jpg','images/pro/pro_gray_4.jpg','images/pro/pro_gray_5.jpg'],
     no: {
       name: 'Gråvillaen', badge: '',
       desc: 'Moderne og lys villa med store panoramavinduer mot fjorden. Vedovn i stuen skaper koselig stemning på kjølige kvelder. Romslig terrasse mot fjorden er perfekt for morgenkaffeen og kveldsmaten.',
@@ -220,7 +222,7 @@ const VILLAS = {
   },
   red: {
     price: '3 200 kr',
-    images: ['images/ext_43.jpg','images/red_01.jpg','images/red_07.jpg','images/red_08.jpg','images/red_09.jpg','images/red_11.jpg','images/red_12.jpg','images/red_14.jpg','images/red_15.jpg'],
+    images: ['images/pro/pro_red_facade.jpg','images/pro/pro_red_1.jpg','images/pro/pro_red_2.jpg','images/pro/pro_red_3.jpg','images/red_07.jpg','images/red_08.jpg','images/red_09.jpg','images/red_11.jpg'],
     no: {
       name: 'Rødvillaen', badge: '',
       desc: 'Rustikk og varm villa med eksponerte trebjelker i taket. Den koselige stuen gir en unik norsk atmosfære. Store vinduer slipper inn naturlyset og gir utsikt mot den vakre norske naturen rundt øyen.',
@@ -236,7 +238,7 @@ const VILLAS = {
   },
   yellow: {
     price: '2 600 kr',
-    images: ['images/yellow_01.jpg','images/yellow_02.jpg','images/yellow_03.jpg','images/yellow_04.jpg','images/yellow_05.jpg','images/yellow_06.jpg','images/yellow_07.jpg','images/yellow_08.jpg'],
+    images: ['images/pro/pro_yellow_facade.jpg','images/yellow_01.jpg','images/pro/pro_yellow_2.jpg','images/pro/pro_yellow_3.jpg','images/pro/pro_yellow_4.jpg','images/pro/pro_yellow_5.jpg'],
     no: {
       name: 'Gultvillaen', badge: '',
       desc: 'Sjarmerende og privat hytte nestled i naturen med panoramautsikt mot fjord og fjell. Intim og rolig atmosfære — ideell for par som ønsker fred og stillhet. Solrik terrasse med direkte utsikt mot fjordlandskapet.',
@@ -252,7 +254,7 @@ const VILLAS = {
   },
   green: {
     price: '2 800 kr',
-    images: ['images/ext_40.jpg','images/green_01.jpg','images/green_02.jpg','images/green_04.jpg','images/green_05.jpg','images/green_06.jpg','images/green_11.jpg','images/green_12.jpg','images/green_15.jpg'],
+    images: ['images/pro/pro_green_facade.jpg','images/pro/pro_green_balcony.jpg','images/pro/pro_green_3.jpg','images/pro/pro_green_4.jpg','images/pro/pro_green_5.jpg','images/pro/pro_green_6.jpg','images/pro/pro_green_7.jpg'],
     no: {
       name: 'Grønnvillaen', badge: 'Ny!',
       desc: 'Nyoppusset moderne hytte med stor åpen terrasse og panoramautsikt over øyen. Den romslige stuen med store vinduer gir deg naturen rett inn i stuen. En av de mest private og naturskjønne plassene på Ulvsnesøy.',
