@@ -773,7 +773,7 @@ if (galleryImgs.length) {
 
   /* ── Nordic flute note (additive: fund + 2nd + breath) ── */
   function fluteNote(ctx, dest, freq, vol, startT, durT) {
-    const atk = 0.14, rel = 0.45;
+    const atk = 0.16, rel = 0.5;
     const end = startT + durT;
 
     function tone(f, gainVal, type='sine') {
@@ -787,41 +787,44 @@ if (galleryImgs.length) {
       o.start(startT); o.stop(end + 0.05);
     }
 
-    tone(freq,      vol);          // fundamental — sine
-    tone(freq*2,    vol*0.12);     // 2nd harmonic — flute body
-    tone(freq*3,    vol*0.04);     // 3rd harmonic — air
+    tone(freq,      vol);          // fundamental
+    tone(freq*2,    vol*0.07);     // 2nd harmonic — lighter than before
+    tone(freq*3,    vol*0.02);     // 3rd — just a touch of air
 
-    /* Breath noise: filtered white noise mixed quietly for realism */
+    /* Breath noise — reduced, very subtle */
     const ns = ctx.createBufferSource();
     ns.buffer = pinkBuf(ctx, Math.max(2, durT + 0.5)); ns.loop = true;
-    const hp = ctx.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=3800;
+    const hp = ctx.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=4200;
     const ng = ctx.createGain(); ng.gain.value = 0;
     ng.gain.setValueAtTime(0, startT);
-    ng.gain.linearRampToValueAtTime(vol*0.028, startT+atk);
-    ng.gain.setValueAtTime(vol*0.028, end-rel);
+    ng.gain.linearRampToValueAtTime(vol*0.016, startT+atk);
+    ng.gain.setValueAtTime(vol*0.016, end-rel);
     ng.gain.linearRampToValueAtTime(0, end);
     ns.connect(hp); hp.connect(ng); ng.connect(dest);
     ns.start(startT); ns.stop(end+0.05);
   }
 
-  /* ── Melody sequencer — D minor modal (Dorian), Nordic phrasing ── */
-  /* Freq map */
-  const N = { D3:146.83, A3:220.00, D4:293.66, E4:329.63, F4:349.23,
-               G4:392.00, A4:440.00, Bb4:466.16, C5:523.25, D5:587.33 };
+  /* ── Melody sequencer — D Dorian (natural 6th = B gives Nordic lightness) ── */
+  const N = { D4:293.66, E4:329.63, F4:349.23, G4:392.00,
+               A4:440.00, B4:493.88, C5:523.25, D5:587.33 };
 
-  /* Three phrases, each an array of [freq, dur, gapAfter] */
+  /* Lighter, flowing phrases — more upward movement, less brooding */
   const PHRASES = [
-    [[N.D4,2.2,0.5],[N.A4,1.6,0.4],[N.G4,1.8,0.5],[N.F4,2.8,2.5]],
-    [[N.A4,1.8,0.4],[N.C5,1.5,0.4],[N.D5,3.2,0.5],[N.C5,1.3,0.3],[N.A4,2.0,3.0]],
-    [[N.F4,2.0,0.4],[N.G4,1.5,0.4],[N.A4,2.2,0.5],[N.G4,1.8,0.4],[N.F4,1.5,0.4],[N.D4,3.0,4.0]],
-    [[N.D4,1.2,0.2],[N.F4,1.0,0.2],[N.G4,1.0,0.2],[N.A4,3.5,3.5]],  // ascending phrase
+    // Gentle rise: D→F→A, lands softly on G
+    [[N.D4,1.6,0.35],[N.F4,1.3,0.3],[N.A4,2.0,0.4],[N.G4,2.2,3.0]],
+    // Bright Dorian phrase: uses B natural (the Nordic lift)
+    [[N.G4,1.4,0.3],[N.A4,1.3,0.3],[N.B4,2.0,0.4],[N.A4,1.5,0.3],[N.G4,1.8,3.5]],
+    // Simple ascending — optimistic, light
+    [[N.D4,1.0,0.2],[N.F4,0.9,0.2],[N.G4,1.0,0.2],[N.A4,1.4,0.3],[N.B4,2.5,4.0]],
+    // Mid-range wandering — peaceful, not heavy
+    [[N.A4,1.5,0.35],[N.G4,1.2,0.3],[N.A4,1.0,0.25],[N.C5,2.2,0.4],[N.A4,1.8,3.5]],
   ];
 
   function scheduleMelody(dest, startT) {
     if (!playing) return;
     const phrase = PHRASES[Math.floor(Math.random()*PHRASES.length)];
     let t = startT;
-    const vol = 0.34;
+    const vol = 0.19;  // quieter than before
     phrase.forEach(([freq, dur, gap]) => {
       /* Small pitch humanisation ±0.8% */
       const fHz = freq * (1 + (Math.random()-0.5)*0.016);
